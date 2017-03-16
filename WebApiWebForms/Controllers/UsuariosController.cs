@@ -1,14 +1,19 @@
-﻿using System;
+﻿using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebForms.Services;
 
 namespace WebApiWebForms.Controllers
 {
     public class UsuariosController : ApiController
     {
+        [Dependency]
+        public IUsuarioService _usuarioService { get; set; }
+
         // GET: api/Usuarios
         public IEnumerable<string> Get()
         {
@@ -18,7 +23,8 @@ namespace WebApiWebForms.Controllers
         // GET: api/Usuarios/5
         public string Get(int id)
         {
-            return "value";
+            var r = _usuarioService.RetornarMensagem();
+            return "dsf"; // _usuarioService.RetornarMensagem();
         }
 
         // POST: api/Usuarios

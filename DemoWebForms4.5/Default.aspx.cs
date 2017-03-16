@@ -11,7 +11,7 @@ namespace DemoWebForms4._5
 {
     public partial class _Default : Page
     {
-        IUsuarioService _usuarioService { get; set; }
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,10 +19,6 @@ namespace DemoWebForms4._5
         }
 
      
-        public  string GetNome()
-        {
-            var u =  _usuarioService.RetornarMensagem();
-            return u;
-        }
+       
     }
 }
