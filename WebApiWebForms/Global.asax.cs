@@ -14,6 +14,7 @@ namespace WebApiWebForms
     {
         void Application_Start(object sender, EventArgs e)
         {
+            UnityConfig.RegisterComponents();
             // Code that runs on application startup
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

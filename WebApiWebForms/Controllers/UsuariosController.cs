@@ -11,8 +11,13 @@ namespace WebApiWebForms.Controllers
 {
     public class UsuariosController : ApiController
     {
-        [Dependency]
-        public IUsuarioService _usuarioService { get; set; }
+
+        private readonly IUsuarioService _usuarioService;
+        public UsuariosController(IUsuarioService usuarioService)
+        {
+            _usuarioService = usuarioService;
+        }
+        public UsuariosController() { }
 
         // GET: api/Usuarios
         public IEnumerable<string> Get()
@@ -24,7 +29,7 @@ namespace WebApiWebForms.Controllers
         public string Get(int id)
         {
             var r = _usuarioService.RetornarMensagem();
-            return "dsf"; // _usuarioService.RetornarMensagem();
+            return r; // _usuarioService.RetornarMensagem();
         }
 
         // POST: api/Usuarios

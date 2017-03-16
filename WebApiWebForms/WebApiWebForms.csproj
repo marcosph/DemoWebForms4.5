@@ -112,6 +112,9 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.WebApi, Version=5.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.2.3\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.WebForms, Version=1.4.5797.27456, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.WebForms.1.4.0.0\lib\net40\Unity.WebForms.dll</HintPath>
     </Reference>
@@ -214,7 +217,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -224,6 +226,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityWebFormsStart.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Contact.aspx.cs">

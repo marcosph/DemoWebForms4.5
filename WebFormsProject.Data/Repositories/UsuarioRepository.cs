@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebForms.Domain
+namespace WebFormsProject.Data.Repositories
 {
-    public class Class1
+    public class UsuarioRepository
     {
     }
 }

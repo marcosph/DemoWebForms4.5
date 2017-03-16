@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebFormsProject.Data
+namespace WebForms.Domain.Interfaces.Services
 {
-    public class Class1
+    public interface IUsuarioService
     {
+        string GetCpfDoUsuario();
     }
 }
