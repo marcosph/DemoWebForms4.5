@@ -286,9 +286,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebForms.Core\WebForms.Core.csproj">
+      <Project>{a9f8170b-e89f-4681-b9cb-c130453dc53e}</Project>
+      <Name>WebForms.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebForms.Services\WebForms.Services.csproj">
       <Project>{967b3267-e03d-4515-ac50-baae51a22e4a}</Project>
       <Name>WebForms.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebFormsProject.Data\WebFormsProject.Data.csproj">
+      <Project>{6e46f24c-00f2-4529-bf2c-236f96def2bb}</Project>
+      <Name>WebFormsProject.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

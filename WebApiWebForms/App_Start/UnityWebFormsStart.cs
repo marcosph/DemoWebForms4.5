@@ -3,6 +3,7 @@ using System.Web;
 using Microsoft.Practices.Unity;
 using Unity.WebForms;
 using WebForms.Services;
+using WebFormsProject.Data.Infrastructure;
 
 [assembly: WebActivatorEx.PostApplicationStartMethod( typeof(WebApiWebForms.App_Start.UnityWebFormsStart), "PostStart" )]
 namespace WebApiWebForms.App_Start
@@ -35,6 +36,9 @@ namespace WebApiWebForms.App_Start
 		{
             // TODO: Add any dependencies needed here
             container.RegisterType<IUsuarioService, UsuarioService>();
-		}
+            container.RegisterType<IProdutoService, ProdutoService>();
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
+
+        }
 	}
 }

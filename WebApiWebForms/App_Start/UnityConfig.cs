@@ -2,6 +2,7 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Unity.WebApi;
 using WebForms.Services;
+using WebFormsProject.Data.Infrastructure;
 
 namespace WebApiWebForms
 {
@@ -16,6 +17,8 @@ namespace WebApiWebForms
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IUsuarioService,UsuarioService>();
+
+            container.RegisterType<IDatabaseFactory, DatabaseFactory>();
             
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
