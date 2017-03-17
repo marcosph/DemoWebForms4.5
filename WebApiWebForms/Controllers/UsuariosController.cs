@@ -1,11 +1,7 @@
-﻿using Microsoft.Practices.Unity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using WebForms.Services;
+using WebFormsProject.Data;
 
 namespace WebApiWebForms.Controllers
 {
@@ -13,28 +9,34 @@ namespace WebApiWebForms.Controllers
     {
 
         private readonly IUsuarioService _usuarioService;
-        public UsuariosController(IUsuarioService usuarioService)
+        private readonly IProdutoService _produtoService;
+        public UsuariosController(IUsuarioService usuarioService, IProdutoService produtoService)
         {
             _usuarioService = usuarioService;
+            _produtoService = produtoService;
         }
         public UsuariosController() { }
 
         // GET: api/Usuarios
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        public IEnumerable<Produto> Get()
+        {           
+            return _produtoService.BuscarTodosProduto();
         }
 
         // GET: api/Usuarios/5
-        public string Get(int id)
+        public Produto Get(int id)
         {
+            var lista = _produtoService.BuscarTodosProduto();
             var r = _usuarioService.RetornarMensagem();
-            return r; // _usuarioService.RetornarMensagem();
+            return _produtoService.GetByIdProduto(id); // _usuarioService.RetornarMensagem();
         }
 
         // POST: api/Usuarios
-        public void Post([FromBody]string value)
+        [HttpPost]
+        public void Post(Produto produto)
         {
+            var p = new Produto() { Nome = "Jose mari" };
+            _produtoService.CriarProduto(p);            
         }
 
         // PUT: api/Usuarios/5

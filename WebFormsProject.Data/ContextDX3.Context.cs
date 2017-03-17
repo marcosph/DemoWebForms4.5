@@ -21,7 +21,7 @@ namespace WebFormsProject.Data
         }
         public virtual void Commit()
         {
-            base.SaveChangesAsync();
+            base.SaveChanges();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

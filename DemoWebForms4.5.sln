@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWebForms4.5", "DemoWebForms4.5\DemoWebForms4.5.csproj", "{020B11B1-A214-442D-8A71-DD7E77D21E41}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiWebForms", "WebApiWebForms\WebApiWebForms.csproj", "{12073AC0-2FA6-4A12-A835-5749A2774772}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms.Core", "WebForms.Core\WebForms.Core.csproj", "{A9F8170B-E89F-4681-B9CB-C130453DC53E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore", "NetCore\NetCore.csproj", "{7F162BAE-7131-409B-95AE-E97FB9F199C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A9F8170B-E89F-4681-B9CB-C130453DC53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9F8170B-E89F-4681-B9CB-C130453DC53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9F8170B-E89F-4681-B9CB-C130453DC53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F162BAE-7131-409B-95AE-E97FB9F199C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F162BAE-7131-409B-95AE-E97FB9F199C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F162BAE-7131-409B-95AE-E97FB9F199C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F162BAE-7131-409B-95AE-E97FB9F199C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
