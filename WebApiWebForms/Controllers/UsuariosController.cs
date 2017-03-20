@@ -26,17 +26,15 @@ namespace WebApiWebForms.Controllers
         // GET: api/Usuarios/5
         public Produto Get(int id)
         {
-            var lista = _produtoService.BuscarTodosProduto();
-            var r = _usuarioService.RetornarMensagem();
-            return _produtoService.GetByIdProduto(id); // _usuarioService.RetornarMensagem();
+            return _produtoService.GetByIdProduto(id); 
         }
 
         // POST: api/Usuarios
         [HttpPost]
         public void Post(Produto produto)
         {
-            var p = new Produto() { Nome = "Jose mari" };
-            _produtoService.CriarProduto(p);            
+            var p = new Produto() { Nome = "Carioca" };
+            _produtoService.CriarProduto(produto);            
         }
 
         // PUT: api/Usuarios/5
