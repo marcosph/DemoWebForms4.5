@@ -30,7 +30,7 @@ namespace WebFormsEmpty.App_Start
 
         private static IUnityContainer BuildUnityContainerClassic()
         {
-            var container = new UnityContainer();
+            var container = new UnityContainer();///
             container.RegisterType<IUsuarioService, UsuarioService>();
             container.RegisterType<IProdutoService, ProdutoService>();
 
