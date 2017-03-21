@@ -22,8 +22,8 @@ namespace WebFormsProject.Data.Infrastructure
         }
 
         public void Commit()
-        {
-            DataContext.Commit();
+        {           
+             DataContext.Commit();
         }
     }
 }

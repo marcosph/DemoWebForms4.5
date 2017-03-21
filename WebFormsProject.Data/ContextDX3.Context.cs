@@ -19,16 +19,13 @@ namespace WebFormsProject.Data
             : base("name=DX3Context")
         {
         }
-        public virtual void Commit()
-        {
-            base.SaveChanges();
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<Produto> Produto { get; set; }
+        public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }

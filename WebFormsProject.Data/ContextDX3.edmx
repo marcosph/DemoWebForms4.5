@@ -5,6 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DB_A1A2B3_AdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApplicationUser">
+          <Key>
+            <PropertyRef Name="ApplicationUserId" />
+          </Key>
+          <Property Name="ApplicationUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DomainCredential" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MachineAddress" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="LastAccessDateTime" Type="datetime" Nullable="false" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="CreatedById" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="EditedById" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Produto">
           <Key>
             <PropertyRef Name="Id" />
@@ -13,6 +29,7 @@
           <Property Name="Nome" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="DB_A1A2B3_AdminModelStoreContainer">
+          <EntitySet Name="ApplicationUser" EntityType="Self.ApplicationUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -21,6 +38,7 @@
       <Schema Namespace="DB_A1A2B3_AdminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DX3Context" annotation:LazyLoadingEnabled="true" >
           <EntitySet Name="Produto" EntityType="DB_A1A2B3_AdminModel.Produto" />
+          <EntitySet Name="ApplicationUser" EntityType="DB_A1A2B3_AdminModel.ApplicationUser" />
         </EntityContainer>
         <EntityType Name="Produto">
           <Key>
@@ -28,6 +46,22 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ApplicationUser">
+          <Key>
+            <PropertyRef Name="ApplicationUserId" />
+          </Key>
+          <Property Name="ApplicationUserId" Type="Guid" Nullable="false" />
+          <Property Name="DomainCredential" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MachineAddress" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastAccessDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="CreatedById" Type="Guid" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditedById" Type="Guid" Nullable="false" />
+          <Property Name="EditedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -40,6 +74,23 @@
               <MappingFragment StoreEntitySet="Produto">
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationUser">
+            <EntityTypeMapping TypeName="DB_A1A2B3_AdminModel.ApplicationUser">
+              <MappingFragment StoreEntitySet="ApplicationUser">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="EditedDateTime" ColumnName="EditedDateTime" />
+                <ScalarProperty Name="EditedById" ColumnName="EditedById" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="LastAccessDateTime" ColumnName="LastAccessDateTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MachineAddress" ColumnName="MachineAddress" />
+                <ScalarProperty Name="DomainCredential" ColumnName="DomainCredential" />
+                <ScalarProperty Name="ApplicationUserId" ColumnName="ApplicationUserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

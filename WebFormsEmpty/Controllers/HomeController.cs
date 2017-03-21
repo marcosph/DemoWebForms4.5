@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using WebForms.Services;
+using WebFormsProject.Data;
 
 namespace WebFormsEmpty.Controllers
 {
@@ -16,7 +18,9 @@ namespace WebFormsEmpty.Controllers
         //[Route("home/{nome?}")]
         public ActionResult Index()
         {
-            var re = _produtoService.BuscarTodosProduto();
+            var p = new Produto() { Nome = "XXXXXXX" };
+             _produtoService.CriarProduto(p);
+            var r = _produtoService.BuscarTodosProduto().Where(o => o.Nome.Equals("XXXXXXX")).FirstOrDefault();
             return View();
         }
        
