@@ -24,11 +24,11 @@ namespace WebFormsEmpty.Controllers
         //[HttpGet]
         public JsonResult Produtos(string nome, string id)
         {
-          //  var result = _produtoService.BuscarTodosProduto();
+            var p = _produtoService.BuscarTodosProduto();
             bool isAdmin = false;
             //TODO: Check the user if it is admin or normal user, (true-Admin, false- Normal user)  
             string output = isAdmin ? "Welcome to the Admin User" : "Welcome to the User";
-            return Json(output, JsonRequestBehavior.AllowGet);
+            return Json(p, JsonRequestBehavior.AllowGet);
         }
     }
 }

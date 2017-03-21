@@ -4,29 +4,31 @@
        
        
         $(document).ready(function () {
-            $('#btnPesquisar').on('click', function () {
-                var uri = document.location.origin + "/api/Produtos/" + 1 + "/" + "Arroz";
+            $('#btnPesquisar').on('click', function (e) {
+                e.preventDefault();
+                var uri = document.location.origin + "/api/Produtos/" + "1" + "/" + "Arroz";
 
-            var jqxhr = $.ajax(uri)
-                .done(function (data) {
-                    $('#produtos').empty(); // Clear the table body.
-                    var dataHTML = "";
+                var jqxhr = $.ajax(uri)
+                    .done(function (data) {
+                        $('#produtos').empty(); // Clear the table body.
+                        var dataHTML = "";
 
-                    // Loop through the list of products.
-                    $.each(data, function (key, val) {
-                        // Add a table row for the product.
-                        dataHTML += '<tr><td>' + val.Nome + '</td></tr>';
+                        // Loop through the list of products.
+                        $.each(data, function (key, val) {
+                            // Add a table row for the product.
+                            dataHTML += '<tr><td>' + val.Nome + '</td></tr>';
+                        });
+                        $('#produtos').html(dataHTML);
+
+                    })
+                    .fail(function () {
+                        alert("error");
+                    })
+                    .always(function () {
+                        //alert("complete");
                     });
-                    $('#produtos').html(dataHTML);
-
-                })
-                .fail(function () {
-                    alert("error");
-                })
-                .always(function () {
-                    //alert("complete");
-                });
             });
+            
             //var Nome_ = $('#txtNome').val();
             //var id_ = $('#txtId').val();
             //var uri = document.location.origin + "/api/Produtos/" + 1 + "/" + "Arroz";
